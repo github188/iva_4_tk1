@@ -1,0 +1,117 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>网络配置</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">上传配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+    <form id="message">
+        <table cellspacing="0" cellpadding="0" width="100%" class="list-table list-table2">
+            <!--
+        <tr>
+            <th>Lan1配置</th>
+            <td>
+                <div class="wlpz-item">IPV4地址：
+                    <input type="text" class="input-default" value="192.168.1.110" />
+                </div>
+                <div class="wlpz-item">子网掩码：
+                    <input type="text" class="input-default" value="255.255.255.0" />
+                </div>
+                <div class="wlpz-item">网关：
+                    <input type="text" class="input-default" value="192.168.1.1" />
+                </div>
+                <div class="wlpz-item">MAC地址：
+                    <input type="text" class="input-default" value="00:23:1l:0d:df" disabled/>
+                </div>
+            </td>
+        </tr> 
+-->
+
+        </table>
+    </form>
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-table2">
+        <tr>
+            <th>无线热点
+                <span id="wlanhot" class="a-offon" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="wlpz-item">
+                    网络SSID：
+                    <input id="netSSID" type="text" class="input-default" value="" />
+                </div>
+                <div class="wlpz-item">
+                    WAP2 PSK：
+                    <input id="WAP2PSK" type="text" class="input-default" value="" />
+                </div>
+                <div class="wlpz-item">
+                    最大连接数：
+                    <select name="" id="maxclient" class="select-default" style="width: 120px;">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <div class="wlpz-item">
+                    AP频段：
+                    <select name="" id="frequency" class="select-default" style="width: 120px;">
+                        <option value="0">2.4GZ</option>
+                        <option value="1">5GZ</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>4G配置
+                <span id="fourD" class="a-offon" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="wlpz-item">
+                    运营商：
+                    <select name="" id="telidSelect" class="select-default" style="width: 200px;">
+                        <!--
+                        <option value="">运营商1</option>
+                        <option value="">运营商2</option>
+                        <option value="">运营商3</option>
+-->
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">©2016-2017 Ceye. All rights reserved.</div>
+<script>
+    $(document).ready(function () {
+        wlpz.addEvent();
+    });
+
+</script>

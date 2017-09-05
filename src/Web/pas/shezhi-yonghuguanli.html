@@ -1,0 +1,200 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>用户管理</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">上传配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <a class="a-btn addUser">新增用户</a>
+        <!--        <span class="save-btn">保存</span>-->
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+
+    <table cellpadding="0" cellspacing="0" width="100%" class="list-table">
+        <thead>
+            <tr>
+                <th width="15%">序号</th>
+                <th width="25%">用户名</th>
+                <th width="30">用户类型</th>
+                <th width="30%">操作</th>
+            </tr>
+        </thead>
+        <tbody id="userlist">
+            <!--
+            <tr>
+                <td>1</td>
+                <td>admin</td>
+                <td>管理员</td>
+                <td>
+                    <a href="" class="icon-cz icon-qx" title="权限"></a>
+                    <a href="" class="icon-cz icon-xg" title="修改"></a>
+                    <a href="" class="icon-cz icon-sc" title="删除"></a>
+                </td>
+            </tr>
+-->
+        </tbody>
+    </table>
+
+
+    <div class="clear"></div>
+</div>
+<div id="addNewUser" class="modal" style="display: none;">
+    <form id='addUserForm'>
+        <div class="popup-box" style="width: 440px;">
+            <dl class="popup-dl">
+                <dt class="popup-dt relative">新增用户<span class="popup-close addUserCancel"></span></dt>
+                <dd class="popup-dd">
+                    <div class="yh-box">
+                        <div class="yh-h">
+                            <span class="yh-h-title">用户名：</span>
+                            <div class="yh-h-info">
+                                <input id='addusername' class="uempty input-default validate[minSize[3],maxSize[16],custom[onlyChineseLetterNumber],required]" style="width: 240px;" type="text">
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">密码：</span>
+                            <div class="yh-h-info">
+                                <input id='addpasswd1' class="uempty input-default validate[minSize[3],maxSize[16],custom[onlyChineseLetterNumber],required]" style="width: 240px;" type="password">
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">确认密码：</span>
+                            <div class="yh-h-info">
+                                <input id='addpasswd2' class="uempty input-default validate[minSize[3],maxSize[16],custom[onlyChineseLetterNumber],required]" style="width: 240px;" type="password">
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">备注信息：</span>
+                            <div class="yh-h-info">
+                                <input id="addRemark" class="uempty input-default" style="width: 240px;" type="text">
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">用户类型：</span>
+                            <div class="yh-h-info">
+                                <select id="addUserLevel" class="select-default" style="width: 140px;">
+                                    <option value="1">操作员</option>
+                                    <option value="2">观察员</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="button-div">
+                            <a class="a-btn a-btn-qx">取消</a>
+                            <a id="addSaveUser" class="a-btn">保存</a>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </form>
+</div>
+
+<div id="editNewUser" class="modal" style="display: none;">
+    <form id='editUserForm'>
+        <div class="popup-box" style="width: 440px;">
+            <dl class="popup-dl">
+                <dt class="popup-dt relative">修改用户<span class="popup-close eidtUserCancel"></span></dt>
+                <dd class="popup-dd">
+                    <div class="yh-box">
+                        <div class="yh-h">
+                            <span class="yh-h-title">用户名：</span>
+                            <div class="yh-h-info">
+                                <input id="editUname" class="uempty input-default" style="width: 240px;" type="text" readonly>
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">密码：</span>
+                            <div class="yh-h-info">
+                                <input id='editpasswd1' class="uempty input-default validate[minSize[3],maxSize[16],custom[onlyChineseLetterNumber],required]" style="width: 240px;" type="password">
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">确认密码：</span>
+                            <div class="yh-h-info">
+                                <input id='editpasswd2' class="uempty input-default validate[minSize[3],maxSize[16],custom[onlyChineseLetterNumber],required]" style="width: 240px;" type="password">
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">备注信息：</span>
+                            <div class="yh-h-info">
+                                <input id="editRemark" class="uempty input-default" style="width: 240px;" type="text">
+                            </div>
+                        </div>
+
+                        <div class="yh-h">
+                            <span class="yh-h-title">用户类型：</span>
+                            <div class="yh-h-info">
+                                <select id="editUserLevel" class="select-default" style="width: 140px;">
+                                    <!--
+                                    <option value="1">操作员</option>
+                                    <option value="2">观察员</option>
+-->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="button-div">
+                            <a class="a-btn a-btn-qx eidtUserCancel">取消</a>
+                            <a id="editSaveUser" class="a-btn">保存</a>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </form>
+</div>
+
+<div id="deleteUser" class="modal" style="display: none;">
+    <div class="popup-box" style="width: 440px;">
+        <dl class="popup-dl">
+            <dt class="popup-dt relative">警告<span class="popup-close delCancel"></span></dt>
+            <dd class="popup-dd">
+                <div class="yh-box">
+                    <div class="yh-h">
+                        <div class="yh-h-info">
+                            是否删除该用户?
+                                <input id="deluserID" type="hidden">
+                        </div>
+                    </div>
+                    <div class="button-div">
+                        <a class="a-btn a-btn-qx delCancel">否</a>
+                        <a id="delUser" class="a-btn">是</a>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </div>
+
+</div>
+<!--/mainbox-->
+<div class="copyright">©2016-2017 Ceye. All rights reserved.</div>
+<script>
+    $(document).ready(function () {
+        yhgl.addEvent();
+    });
+
+</script>

@@ -1,0 +1,135 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>系统维护</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">上传配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+    <div class="weihu-title weihu-title-ds">
+        <span class="weihu-title-b">定时重启</span>
+        <span class="a-offon" style="vertical-align: middle;"></span>
+    </div>
+    <div class="weihu-cq-btn">
+        <a class="a-btn ddcq">点击重启</a>
+        <div style="padding-left: 15px; display: none; color: red;" class="ddcq-c">正在重启，目前已完成<span id="reboot_span">0</span>%</div>
+    </div>
+    <ul class="cq-time addNewTime">
+    </ul>
+
+    <ul class="cq-time addTimeBtn">
+        <li class="cq-time-add"><a>+</a></li>
+    </ul>
+
+    <div class="clear"></div>
+
+    <div class="wh-xian"></div>
+
+    <div class="weihu-title weihu-title-huifu"><span class="weihu-title-b">系统恢复</span></div>
+    <div class="weihu-cq-btn">
+        <a class="a-btn huifu">恢复出厂设置</a>
+        <div style="padding-left: 15px; display: none; color: red;" class="huifu-c">正在恢复，目前已完成<span id="reboot_factoryRestore">0</span>%</div>
+    </div>
+
+    <div class="wh-xian"></div>
+
+    <div class="weihu-title weihu-title-beifen"><span class="weihu-title-b">备份/还原</span></div>
+
+    <div class="weihu-cq-btn">
+        <a class="a-btn beifen">保存备份</a>
+        <!--        <div style="padding-left: 15px; display: none;color: red;" class="beifen-c">保存完成</div>-->
+    </div>
+    <form id="postStore">
+        <table cellpadding="0" cellspacing="0" width="">
+            <tr height="50">
+                <td>选择文件</td>
+                <td style="padding-left: 10px; padding-right: 10px; position: relative;">
+                    <input id="resoreFile" type="text" class="input-default" style="width: 300px;" />
+                    <input type="file" name='file' class="wenjian" onchange="document.getElementById('resoreFile').value=this.value" />
+                </td>
+                <td>
+                    <div class="weihu-cq-btn">
+                        <a class="a-btn huanyuan">备份还原</a>
+                        <!--                        <div style="padding-left: 15px; display: none;color: red;" class="huanyuan-c">正在备份还原，目前已完成50%</div>-->
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="wh-xian"></div>
+
+    <div class="weihu-title weihu-title-shengji"><span class="weihu-title-b">系统升级</span></div>
+    <form id="upgradeStore">
+        <table cellpadding="0" cellspacing="0" width="">
+            <tr height="50">
+                <td>升级文件</td>
+                <td style="padding-left: 10px; padding-right: 10px; position: relative;">
+                    <input id="upgradefile" type="text" class="input-default" style="width: 300px;" />
+                    <input type="file" name='file' class="wenjian2" onchange="document.getElementById('upgradefile').value=this.value" />
+                </td>
+                <td>
+                    <div class="weihu-cq-btn">
+                        <a class="a-btn shengji">点击升级</a>
+                        <!--                    <div style="padding-left: 15px; display: none;color: red;" class="shengji-c">正在升级，目前已完成50%</div>-->
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="wh-xian"></div>
+    <div class="weihu-title quzheng-title1"><span class="weihu-title-b">授权信息</span></div>
+    <table cellpadding="0" cellspacing="0" width="">
+        <tr height="50">
+            <td>授权码</td>
+            <td style="padding-left: 10px; padding-right: 10px;">
+                <input type="text" class="input-default license" style="width: 300px;" />
+            </td>
+            <td style="padding-left: 10px; padding-right: 10px;">
+                <a class="a-btn setAuth">授权</a>
+                <!--                <input type="button" class="input-default setAuth" value="授权" title="授权">-->
+            </td>
+            <td style="padding-left: 5px;">
+                <a class="a-btn delAuth">删除</a>
+                <!--                <input class="input-default delAuth" type="button" title="删除" value="删除" />-->
+            </td>
+            <tr>
+                <td>授权类型:</td>
+                <td>
+                    <div style="padding-left: 15px; color: red;"><span class="auth_type"></span></div>
+                </td>
+                <td>
+                    <span style="padding-left: 15px; color: red;" class="auth_timeout"></span>
+                </td>
+            </tr>
+        </tr>
+    </table>
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">©2016-2017 Ceye. All rights reserved.</div>
+<script>
+    $(document).ready(function () {
+        xtwh.addEvent();
+    });
+
+</script>

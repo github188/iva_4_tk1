@@ -1,0 +1,210 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>智能分析</a> &raquo; <a>分析规则</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="zhinengfenxi-suanfacanshu">算法参数</a></li>
+        <li class="lanmu-active"><a data-url="zhinengfenxi-fenxiguize">分析规则</a></li>
+        <li><a data-url="zhinengfenxi-zhuapaijihua">抓拍计划</a></li>
+        <li><a data-url="zhinengfenxi-quzhengshuju">取证数据配置</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful" style="display:none;">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+    <form id="fxgzValidate">
+      <div class="fxgzbox">
+        <div style="float: left;">
+        <object id="plugin0" type="application/x-ivrwebplugin" width="700" height="425">
+            <param name="onload" value="AlgSetting_pluginLoad" />
+        </object>
+        </div>
+        <!--        <div class="fxgz-vedio"></div>--> 
+        <div class="fxgz-setting">
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <!-- 云台方向调节-->
+                        <div class="yuntai operateYuntai">
+                            <div class="yuntai-fx yuntai-top">
+                                <a data-type="2" onfocus="this.blur()"></a>
+                            </div>
+                            <div class="yuntai-fx yuntai-right">
+                                <a data-type="4" onfocus="this.blur()"></a>
+                            </div>
+                            <div class="yuntai-fx yuntai-bottom">
+                                <a data-type="6" onfocus="this.blur()"></a>
+                            </div>
+                            <div class="yuntai-fx yuntai-left">
+                                <a data-type="0" onfocus="this.blur()"></a>
+                            </div>
+                            <div class="yuntai-fx yuntai-center">
+                                <a data-type="5" onfocus="this.blur()"></a>
+                            </div>
+                            <div class="yuntai-xian-heng"></div>
+                            <div class="yuntai-xian-shu"></div>
+                        </div>
+                        <!--/yuntai-->
+                    </td>
+                    <td style="padding-left: 15px; vertical-align: top;">
+                        <!-- 云台速度控制-->
+                        <ul>
+                            <li style="float:left;margin-left:-25px;">速度:</li>
+                            <li style="float:left; margin-left: 10px;margin-top:5px;margin-bottom:2em;"><div id="yutaiSpeed" style="width:150px;height:5px;border-radius:2px;"></div><input type="hidden"/></li>
+                        </ul>
+<!--
+                        <div class="control-progress" style="width: 140px;margin:10px auto 15px;">
+                            <div class="control-progress-line"></div>
+                            <span class="control-progress-point" style="left: 20%;"></span>
+                        </div>
+-->
+                      
+
+                        <!-- 云台加减控制-->
+                        <div class="yuntai-kz operateYuntai">
+                            <ul class="yuntai-kz-ul">
+                                <li class="yuntai-kz-li-jia">
+                                    <a data-type="8" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jia"></a>
+                                </li>
+                                <li class="yuntai-kz-li-txt yuntai-kz-li-fxgztxt"><span>缩放</span></li>
+                                <li class="yuntai-kz-li-jian">
+                                    <a data-type="9" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jian"></a>
+                                </li>
+                                <li class="yuntai-kz-li-xian"></li>
+                            </ul>
+                            <ul class="yuntai-kz-ul">
+                                <li class="yuntai-kz-li-jia">
+                                    <a data-type="12" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jia"></a>
+                                </li>
+                                <li class="yuntai-kz-li-txt yuntai-kz-li-fxgztxt"><span>光圈</span></li>
+                                <li class="yuntai-kz-li-jian">
+                                    <a data-type="13" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jian"></a>
+                                </li>
+                                <li class="yuntai-kz-li-xian"></li>
+                            </ul>
+                            <ul class="yuntai-kz-ul">
+                                <li class="yuntai-kz-li-jia">
+                                    <a data-type="10" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jia"></a>
+                                </li>
+                                <li class="yuntai-kz-li-txt yuntai-kz-li-fxgztxt"><span>聚焦</span></li>
+                                <li class="yuntai-kz-li-jian">
+                                    <a data-type="11" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jian"></a>
+                                </li>
+                                <li class="yuntai-kz-li-xian"></li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                        <!--/yuntai-kz-->
+                    </td>
+                </tr>
+            </table>
+
+            <div class="fxgz-xian" style="margin:13px 0 10px 0;"></div>
+
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <tr height="36">
+                    <td>分析场景
+                        <select id="sceneSelect" class="select-default" style="width: 70px;">
+                            <option value="0">场景1</option> 
+                        </select>
+                    </td>
+                    <td>
+                        方向
+                        <select id="sceneDirect" class="select-default" style="width: 80px;">
+                            <option value="1">东向西</option>
+                            <option value="2">西向东</option>
+                            <option value="3">南向北</option>
+                            <option value="4">北向南</option>
+                            <option value="5">上行</option>
+                            <option value="6">下行</option>
+                            <option value="7">双向</option>
+                            <option value="8">其它</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr height="36">
+                    <td>预置位：
+                        <input id="presetid" type="text" class="input-default input-w80 validate[custom[integer],min[0]]" />
+                    </td>
+                    <td>分析时间
+                        <input id="waittime" type="text" class="input-default input-w30 validate[custom[integer],min[0]]" />秒</td>
+                </tr>
+                <tr height="36">
+                    <td>场景名称
+                        <input id="scenename" type="text" class="input-default input-w160" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div class="fxgz-xian" style="margin-top: 10px;margin-bottom: 8px;"></div>
+
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tr height="36">
+                    <td>目标标定</td>
+                    <td><a id="supportCalibrate" class="a-btn" data-type="2">绘制标定</a></td> 
+                    <td><input type="checkbox" id="targetSize" class="regular-checkbox" />
+                        <label for="targetSize"></label><span class="label-txt">目标限制</span></td>
+                    <td></td>
+                </tr>
+                <tr height="36" id="hideCalibrate"> 
+                    <td>标定长(m): </td>
+                    <td><input id="clblen" type="text" class="input-default input-w60 validate[custom[integer],min[0]]" value="" /></td>
+                    <td>标定宽(m):</td>
+                    <td><input id="clbwidth" type="text" class="input-default input-w60 validate[custom[integer],min[0]]" value="" /></td>
+                </tr>
+                <tr height="36">
+                    <td>区域规则:</td>
+                    <td><a id="supportAnalyArea" class="a-btn" data-type="4">绘制抓拍区域</a></td> 
+                    <td><a id="supportShieldArea" class="a-btn" data-type="1">绘制屏蔽区域</a></td> 
+                    <td><a id="supportPolyline" class="a-btn"  data-type="7">绘制判定线</a></td> 
+                </tr>
+            </table>
+
+<!--            <div class="fxgz-xian" style="margin-top: 10px;margin-bottom: 5px;"></div>-->
+
+<!--
+            <table cellpadding="0" cellspacing="0" width="">
+                <tr height="36">
+                    <td>违法构成时间</td>
+                    <td>
+                        <div class="control-progress" style="width: 130px;margin: 0 10px;">
+                            <div class="control-progress-line"></div>
+                            <span class="control-progress-point" style="left: 20%;"></span>
+                        </div>
+                         
+                    </td>
+                    <td>
+                        <input type="text" class="input-default input-w30" value="30" />
+                    </td>
+                    <td>秒</td>
+                </tr>
+            </table>
+-->
+
+        </div>
+        <!--/fxgz-setting-->
+    </div>
+    </form>
+    <!--/fxgzbox-->
+
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">@ 2017 xxxx有限公司</div>
+<script>
+    $(document).ready(function() {
+        analysisRules.addEvent();
+    });
+
+</script>

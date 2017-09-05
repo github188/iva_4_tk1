@@ -1,0 +1,134 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>查询</a> &raquo; <a>取证数据</a>
+</div>
+<!--/place-->
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <!--<li class="lanmu-active"><a data-url="chaxun-quzhengshuju">取证数据</a></li>-->
+        <li><a data-url="chaxun-luxiang">录像</a></li>
+        <li><a data-url="chaxun-rizhi">日志</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+</div>
+<div class="mainbox">
+    <!-- 搜索条件-->
+    <form action="">
+        <table cellpadding="0" cellspacing="0" width="100%" height="28" class="chaxun-search">
+            <tr>
+                <td>起始时间：
+                    <input type="text" id="startTime_QZSJ" class="Wdate input-default chaxun-search-time" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss', readOnly:false,onpicked:function(){}})" />
+                </td>
+                <td>结束时间：
+                    <input type="text" id="endTime_QZSJ" class="Wdate input-default chaxun-search-time" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss', readOnly:false,onpicked:function(){}})" />
+                </td>
+                <td>车牌号码：
+                    <input type="text" id="cphm_QZSJ" class="input-default chaxun-search-haopai" />
+                </td>
+                <td>车牌颜色：
+                    <select id="color_QZSJ" class="select-default" style="width: 100px;">
+                        <option value="0">全部</option>
+                        <option value="4">白色</option>
+                        <option value="2">蓝色</option>
+                        <option value="3">黄色</option>
+                        <option value="5">绿色</option>
+                        <option value="1">黑色</option>
+                        <option value="6">其它</option>
+                    </select>
+                </td>
+                <td>数据类型：
+                    <select id="dataType_QZSJ" class="select-default" style="width: 100px;">
+                        <option value="0">全部</option>
+                        <option value="1">违法数据</option>
+                        <option value="2">交通事件</option>
+                    </select>
+                </td>
+                <td align="right"><a id="query_QZSJ" class="a-btn">查询</a></td>
+            </tr>
+        </table>
+    </form>
+    <!-- 日志列表-->
+    <table cellpadding="0" cellspacing="0" width="100%" class="list-table qzsjTable">
+        <thead>
+        <tr>
+            <th width="15%">序号</th>
+            <th width="15%">抓拍时间</th>
+            <th width="15%">数据类型</th>
+            <th width="15%">车牌号码</th>
+            <th width="15%">车牌颜色</th>
+            <th width="15%">预览</th>
+            <th width="15%">删除</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!-- 列表分页-->
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-paging">
+        <tr>
+            <td align="right">
+                <form action="">
+                    共<span id="pagecnt_QZSJ" class="list-paging-shuzi">1</span>页，当前第<span id="pageno_QZSJ" class="list-paging-shuzi">1</span>页，共<span id="reccnt_QZSJ" class="list-paging-shuzi">0</span>条数据
+                    <a class="list-paging-a firstPage" title="首页">&laquo;</a>
+                    <a class="list-paging-a prevPage" title="上一页">&lsaquo;</a>
+                    <a class="list-paging-a nextPage" title="下一页">&rsaquo;</a>
+                    <a class="list-paging-a lastPage" title="末页">&raquo;</a>
+                    <input type="text" class="list-paging-input input-default pageNum" maxlength="3" placeholder="页码" />
+                    <a class="a-btn searchPage" title="跳转 ">GO</a>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <div class="clear"></div>
+</div>
+<div id="previewImg" class="modal" style="display:none;">
+    <div class="popup-box" style="width: 800px;">
+        <dl class="popup-dl">
+            <dt class="popup-dt relative">预览<span class="popup-close"></span></dt>
+            <dd class="popup-dd">
+                <div class="yulan-box">
+                    <div id="tupian" class="tab_content" style="display: block;">
+                        <div class="tupian-side fleft">
+                            <ul class="tupian-side-ul">
+                                <li class="cur"><img src="images/preview-1.gif" alt="" /></li>
+                                <li><img src="images/preview-2.gif" alt="" /></li>
+                                <li><img src="images/preview-3.gif" alt="" /></li>
+                                <li><img src="images/preview-4.gif" alt="" /></li>
+                            </ul>
+                        </div>
+                        <div class="tupian-main fleft">
+                            <img src="images/picture-1.png" alt="" class="imgs cur" />
+                            <img src="images/picture-2.png" alt="" class="imgs" />
+                            <img src="images/picture-3.png" alt="" class="imgs" />
+                            <img src="images/picture-4.png" alt="" class="imgs" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="shipin" class="tab_content" style="display: none;">
+<!--                        <a href="###" class="shipin-btn"></a>-->
+                          <video id='video' controls='controls'  style="width: 100%;height: 100%; background:#ccc;"></video>
+                    </div> 
+                    <div class="yulan-bottom">
+                        <ul class="yulan-tab">
+                            <li class="active"><a data-window='1'>图片</a></li>
+                            <li><a data-window='2'>视频</a></li>
+                        </ul>
+                        <a class="yulan-qp fullscreen" title="全屏当前图片"></a>
+                        <ul class="yulan-sx">
+                            <li class="previousOne"><a title="上一条">上一条</a></li>
+                            <li class="nextOne" ><a title="下一条">下一条</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div id="fullScreenImg" class="modal" style="display:none;background:#ccc;"><img style="width:100%; height:100%;" src=""/><a class="yulan-qp closescreen" style="" title="关闭"></a></div>
+<div class="copyright">@ 2017 xxxx有限公司</div>
+<script>
+    $(document).ready(function() {
+        qzsj.addEvent();
+    })
+
+</script>

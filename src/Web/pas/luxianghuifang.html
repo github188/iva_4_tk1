@@ -1,0 +1,177 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>录像回放</a>
+</div>
+<!--/place-->
+
+<div class="mainbox">
+
+    <div class="vedio-box vedio-box-lxhf">
+        <div class="vedio-main">
+            <dl class="vedio-player">
+                <dt>
+                    <h5 class="player-title player-t2">录像回放</h5>
+                    <!--
+                <ul class="player-cz">
+                    <li class="player-cz-full"><a title="全屏"></a></li>
+                </ul>
+-->
+                </dt>
+                <dd>
+                    <div id="showVideo" style="height: 450px; display: none;">
+                        <video id='video' controls="controls" style="width: 800px; height: 450px; background: #ccc;"> Your browser does not support HTML5 video.</video>
+                    </div>
+                    <div class="player-pictures"></div>
+                    <div class="loading-video" style="display: none; background: #000; position: relative">
+                        <img src="images/loading.jpg" /></div>
+                </dd>
+                <!--
+                    <dd class="player-control">
+                        <ul class="player-control-ul">
+                            <li class="player-control-stop">
+                                <a title="停止"></a>
+                            </li>
+                            <li class="player-control-back">
+                                <a title="后退"></a>
+                            </li>
+                            <li class="player-control-play">
+                                <a title="播放"></a>
+                            </li>
+                            <li class="player-control-pause">
+                                <a title="暂停"></a>
+                            </li>
+                            <li class="player-control-forward">
+                                <a title="前进"></a>
+                            </li>
+                        </ul>
+                    </dd>
+-->
+            </dl>
+
+            <div class="h-15"></div>
+
+            <table cellpadding="0" cellspacing="0" width="100%" class="list-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>时间</th>
+                        <th>类型</th>
+                        <th>通道</th>
+                        <th>文件名</th>
+                        <th>大小</th>
+                        <th>位置</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="contentVideo">
+                </tbody>
+            </table>
+
+            <!-- 列表分页-->
+            <table cellspacing="0" cellpadding="0" width="100%" class="list-paging">
+                <tr>
+                    <td align="right">
+                        <form action="">
+                            共<span id="pagecnt" class="list-paging-shuzi">1</span>页，当前第<span id="pageno" class="list-paging-shuzi">1</span>页，共<span id="reccnt" class="list-paging-shuzi">0</span>条数据
+                            <a class="list-paging-a firstPage" title="首页">&laquo;</a>
+                            <a class="list-paging-a prevPage" title="上一页">&lsaquo;</a>
+                            <a class="list-paging-a nextPage" title="下一页">&rsaquo;</a>
+                            <a class="list-paging-a lastPage" title="末页">&raquo;</a>
+                            <input type="text" class="list-paging-input input-default pageNum" maxlength="3" placeholder="页码" />
+                            <a class="a-btn searchPage" title="跳转">GO</a>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--/vedio-main-->
+        <div class="vedio-side vedio-side-lxhf">
+            <form id="singleDayVideo">
+                <div class="luxiang-r-title luxiang-r-title-sj">时间</div>
+                <div class="luxiang-r-content">
+                    <table>
+                        <tr height="40">
+                            <td align="right">日期</td>
+                            <td width="10"></td>
+                            <td>
+                                <input id="currentday" type="text" value="" class="Wdate input-default input-w160 validate[required]" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd', readOnly:false,onpicked:function(){}})" placeholder="2017-01-01" readonly />
+                            </td>
+                        </tr>
+                        <tr height="40">
+                            <td>开始时间</td>
+                            <td width="10"></td>
+                            <td>
+                                <input id="starttime" type="text" value="00:00:00" class="Wdate input-default input-w160 validate[required]" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss', readOnly:false,onpicked:function(){}})" />
+                            </td>
+                        </tr>
+                        <tr height="40">
+                            <td>结束时间</td>
+                            <td width="10"></td>
+                            <td>
+                                <input id="endtime" type="text" value="23:59:59" class="Wdate input-default input-w160 validate[required]" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'HH:mm:ss', readOnly:false,onpicked:function(){}})" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="lx-xian"></div>
+
+                <div class="luxiang-r-title luxiang-r-title-wz">位置</div>
+                <div class="luxiang-r-content luxiang-r-content-weizhi">
+                    <input type="checkbox" id="lxhf-weizhi" class="regular-checkbox" checked disabled />
+                    <label for="lxhf-weizhi"></label>
+                    <span class="label-txt">前端设备</span>
+                </div>
+
+                <div class="lx-xian"></div>
+
+                <div class="luxiang-r-title luxiang-r-title-wj">文件类型</div>
+                <div class="luxiang-r-content luxiang-r-content-wenjian">
+                    <div class="luxiang-r-lx">
+                        <input type="radio" id="filetype_record" name="lxhf-wenjian" class="regular-radio" checked disabled />
+                        <label for="lxhf-wenjian-lx"></label>
+                        <span class="label-txt">录像</span>
+                    </div>
+                    <input type="radio" id="lxhf-wenjian-tp" name="lxhf-wenjian" class="regular-radio" disabled />
+                    <label for="lxhf-wenjian-tp"></label>
+                    <span class="label-txt">图片</span>
+                </div>
+
+                <div class="lx-xian"></div>
+
+                <div class="lx-btn"><a class="a-btn btn-search">搜<span></span>索</a></div>
+            </form>
+        </div>
+        <div id="saveasDialog" class="modal" style="display: none;">
+            <div class="popup-box" style="width: 300px;">
+                <dl class="popup-dl">
+                    <dt class="popup-dt relative"><span id="sRowid"></span>另存为 <span class="popup-close cancelDialog"></span></dt>
+                    <dd class="popup-dd">
+                        <div class="yh-box">
+                            <div class="yh-h" style="margin: 0 auto; width: 150px;">
+                                <a id="UDisk" class="a-btn" style="display: none; margin-right: 2.4em;">&nbsp;U&nbsp;盘&nbsp;</a>
+                                <a id="SDCard" class="a-btn" style="display: none;">&nbsp;SD卡&nbsp;</a>
+                                <input type="hidden" id="saveID" />
+                            </div>
+
+                            <!--
+                            <div class="button-div">
+                                
+                            </div>
+-->
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">©2016-2017 Ceye. All rights reserved.</div>
+<script>
+    $(document).ready(function () {
+        lxhf.addEvent();
+    });
+
+</script>

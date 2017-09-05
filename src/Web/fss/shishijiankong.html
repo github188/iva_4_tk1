@@ -1,0 +1,201 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>实时监控</a>
+</div>
+<!--/place-->
+
+<div class="mainbox">
+    <div class="vedio-box vedio-box-ssjk">
+        <div class="vedio-main">
+            <dl class="vedio-player">
+                <dt>
+                            <h5 class="player-title player-t1">实时视频画面</h5>
+                            <ul class="player-cz">
+                                <li class="player-cz-image"><a class="snapPicture" title="截图"></a></li>
+                                <li class="player-cz-vedio"><a class="startRecord" title="录像"></a></li>
+                                <li class="player-cz-vedio2">
+<!--
+                                    <a class="player-cz-vedio2-icon"></a>
+                                    <a class="player-cz-vedio2-pause" title="暂停录像"></a>
+-->
+                                    <a class="player-cz-vedio2-stop stopRecord" title="停止录像"></a>
+                                </li>
+                                <li class="player-cz-full"><a class="fullscreen" title="全屏"></a></li>
+                            </ul>
+
+                            </dt>
+                <dd>
+                    <div id="showPlayer">
+                        <object id="plugin1" type="application/x-ivrwebplugin" width=800px height=450px>
+                            <param name="onload" value="preview_pluginLoaded" />
+                        </object>
+                    </div>
+
+                    <div class="player-pictures" style="display:none;"><a href="./WebPlugin/WebPluginSetup.zip" id='plugin_notice'>请点击此处下载新插件，安装时请关闭浏览器！</a>
+                    </div>
+                    <!--/player-pictures-->
+
+                </dd>
+            </dl>
+
+            <div class="h-15"></div>
+
+			<!--
+            <table cellpadding="0" cellspacing="0" width="100%" class="list-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>类型</th>
+                        <th>抓拍时间</th>
+                        <th>号牌号码</th>
+                        <th>号牌颜色</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <table class="list-paging" cellspacing="0" cellpadding="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td align="right">
+                            <form action="">
+                                共<span id="totalPage" class="list-paging-shuzi">1</span>页，当前第<span id="currentpage" class="list-paging-shuzi">1</span>页，共<span id="totalNum" class="list-paging-shuzi">0</span>条数据
+                                <a class="list-paging-a firstPage" title="首页">«</a>
+                                <a class="list-paging-a prevPage" title="上一页">‹</a>
+                                <a class="list-paging-a nextPage" title="下一页">›</a>
+                                <a class="list-paging-a lastPage" title="末页">»</a>
+                                <input class="list-paging-input input-default" id="yema" maxlength="3" placeholder="页码" type="text" />
+                                <a id="fenyeGo" class="a-btn searchPage" title="跳转">GO</a>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+			-->
+        </div>
+        <!--/vedio-main-->
+
+        <div class="vedio-side vedio-side-ssjk">
+
+            <ul class="ss-maliu">
+                <li>
+                    <input type="radio" id="ssjk_main" name="ssjk-maliu" class="regular-radio" checked />
+                    <label for="ssjk_main"></label><span class="label-txt">主码流</span></li>
+                <li>
+                    <input type="radio" id="ssjk_sub" name="ssjk-maliu" class="regular-radio" />
+                    <label for="ssjk_sub"></label><span class="label-txt">子码流</span></li>
+            </ul>
+
+            <div class="ssjk-offon">
+                <span class="ssjk-yulan" id="openPreview">开启预览</span>
+                <!--<span class="ssjk-zhuapai" id="openCapture">开启抓拍</span>-->
+            </div>
+
+            <!-- 云台方向调节-->
+            <div class="yuntai operateYuntai">
+                <div class="yuntai-fx yuntai-top">
+                    <a data-type="2" onfocus="this.blur()"></a>
+                </div>
+                <div class="yuntai-fx yuntai-right">
+                    <a data-type="4" onfocus="this.blur()"></a>
+                </div>
+                <div class="yuntai-fx yuntai-bottom">
+                    <a data-type="6" onfocus="this.blur()"></a>
+                </div>
+                <div class="yuntai-fx yuntai-left">
+                    <a data-type="0" onfocus="this.blur()"></a>
+                </div>
+                <div class="yuntai-fx yuntai-center">
+                    <a data-type="5" onfocus="this.blur()"></a>
+                </div>
+                <div class="yuntai-xian-heng"></div>
+                <div class="yuntai-xian-shu"></div>
+            </div>
+            <!--/yuntai-->
+
+            <div class="h-20"></div>
+
+            <!-- 云台速度控制-->
+            <div class="ss-sudu">
+                <div id="scrollBar" style="width:13em;"></div>
+                <input id="ScrollBarvalue" type="hidden" />
+                <!--
+                <div class="control-progress">
+                    <div class="control-progress-line"></div>
+                    <span class="control-progress-point" style="left: 20%;"></span>
+                </div>
+-->
+            </div>
+
+            <!-- 云台加减控制-->
+            <div class="yuntai-kz operateYuntai">
+                <ul class="yuntai-kz-ul">
+                    <li class="yuntai-kz-li-jia">
+                        <a data-type="8" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jia"></a>
+                    </li>
+                    <li class="yuntai-kz-li-txt yuntai-kz-li-fxgztxt"><span>缩放</span></li>
+                    <li class="yuntai-kz-li-jian">
+                        <a data-type="9" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jian"></a>
+                    </li>
+                    <li class="yuntai-kz-li-xian"></li>
+                </ul>
+                <ul class="yuntai-kz-ul">
+                    <li class="yuntai-kz-li-jia">
+                        <a data-type="12" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jia"></a>
+                    </li>
+                    <li class="yuntai-kz-li-txt yuntai-kz-li-fxgztxt"><span>光圈</span></li>
+                    <li class="yuntai-kz-li-jian">
+                        <a data-type="13" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jian"></a>
+                    </li>
+                    <li class="yuntai-kz-li-xian"></li>
+                </ul>
+                <ul class="yuntai-kz-ul">
+                    <li class="yuntai-kz-li-jia">
+                        <a data-type="10" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jia"></a>
+                    </li>
+                    <li class="yuntai-kz-li-txt yuntai-kz-li-fxgztxt"><span>聚焦</span></li>
+                    <li class="yuntai-kz-li-jian">
+                        <a data-type="11" onfocus="this.blur()" class="yuntai-kz-btn yuntai-kz-jian"></a>
+                    </li>
+                    <li class="yuntai-kz-li-xian"></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <!--/yuntai-kz-->
+
+            <div class="h-20"></div>
+
+            <ul class="yuzhiwei">
+                <li>预置位：</li>
+                <li>
+                    <select id="presetlist" class="select-default">
+<!--                        <option value="">1</option> -->
+                    </select>
+                </li>
+            </ul>
+
+            <div class="clear"></div>
+
+            <ul class="ss-btn">
+                <li><a class="a-btn btn-shezhi btn_setting">设置</a></li>
+                <li class="ss-btn-center"><a class="a-btn btn-rebuild">新建</a></li> 
+            </ul> 
+            <ul class="ss-btn">
+                <li><a class="a-btn btn-diaoyong btn_invoke">调用</a></li>
+                <li class="ss-btn-center"><a class="a-btn btn-shanchu btn_delete">删除</a></li> 
+            </ul>
+
+        </div>
+        <!--/vedio-side-->
+    </div>
+    <!--/vedio-box-->
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">@ 2017 xxxx有限公司</div>
+<script>
+    $(document).ready(function() {
+        ssjk.addEvent();
+    });  
+</script>

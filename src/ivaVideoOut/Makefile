@@ -1,0 +1,48 @@
+INSTALL_DIR = $(BIN_DIR) 
+
+LDFLAGS = $(MQ_LIB)
+LDFLAGS += $(SQ_LIB)
+LDFLAGS += $(OAL_LIB)
+
+LDFLAGS += $(LIVE555_LIB)
+LDFLAGS += -lrtmp
+LDFLAGS += -ldl -lrt -lpthread
+
+LDFLAGS += -L$(LIB_DIR)
+
+#CFLAGS =-O2
+CFLAGS = -g
+CFLAGS += -I$(GLOBAL_INCLUDE_DIR) -I$(OAL_INCLUDE_DIR)
+CFLAGS += -I$(MQ_INCLUDE_DIR) -I$(SQ_INCLUDE_DIR)
+CFLAGS += -I$(3RDLIB_INCLUDE_DIR)
+CFLAGS += -I$(3RDLIB_INCLUDE_DIR)BasicUsageEnvironment
+CFLAGS += -I$(3RDLIB_INCLUDE_DIR)UsageEnvironment
+CFLAGS += -I$(3RDLIB_INCLUDE_DIR)groupsock
+CFLAGS += -I$(3RDLIB_INCLUDE_DIR)liveMedia
+CFLAGS += -DSOCKLEN_T=socklen_t -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64 -Wall -DBSD=1
+
+TARGET = ivaVideoOut
+
+RELTARGET = $(TARGET)
+
+SOURCES  = $(wildcard ./*.cpp)
+
+
+RELOBJFILES = $(SOURCES:%.cpp=%.o)
+
+.PHONY: clean install
+
+all: $(RELTARGET)
+	
+$(RELTARGET): $(RELOBJFILES)
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+$(RELOBJFILES): %.o: %.cpp
+	$(CPLUSPLUS) -c $(CFLAGS) $< -o $@ 
+
+install: 
+	install -d $(INSTALL_DIR)
+	install $(RELTARGET) $(INSTALL_DIR)
+	
+clean:
+	rm -f $(RELOBJFILES) $(RELTARGET)

@@ -1,0 +1,77 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>查询</a> &raquo; <a>日志</a>
+</div> 
+<!--/place-->
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <!--<li><a data-url="chaxun-quzhengshuju">取证数据</a></li>-->
+        <li><a data-url="chaxun-luxiang">录像</a></li>
+        <li class="lanmu-active"><a data-url="chaxun-rizhi">日志</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+</div>
+<div class="mainbox">
+    <!-- 搜索条件-->
+    <form action="">
+        <table cellpadding="0" cellspacing="0" width="100%" height="28" class="chaxun-search">
+            <tr>
+                <td>起始时间：
+                    <input id="startTime_log" type="text" class="Wdate input-default chaxun-search-time" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss', readOnly:false,onpicked:function(){}})"/>
+                </td>
+                <td>结束时间：
+                    <input id="endTime_log" type="text" class="Wdate input-default chaxun-search-time" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss', readOnly:false,onpicked:function(){}})"/>
+                </td>
+                <td>类型：
+                    <select id="type_log" class="select-default" style="width: 120px;">
+                        <option value="0">全部</option>
+                        <option value="1">用户管理</option>
+                        <option value="2">系统维护</option>
+                        <option value="3">系统配置</option>
+                        <option value="4">视频输入</option>
+                        <option value="5">视频录像</option>
+                        <option value="6">智能算法</option>           
+                    </select>
+                </td>
+                <td align="right"><a id="query_log" class="a-btn">查询</a></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- 日志列表-->
+    <table cellpadding="0" cellspacing="0" width="100%" class="list-table logTable">
+        <tr>
+            <th width="10%">序号</th>
+            <th width="20%">上报时间</th>
+            <th width="15%">类型</th>
+            <th width="15%">用户</th>
+            <th width="20%">远程操作IP</th>
+            <th width="20%">内容</th>
+        </tr> 
+    </table>
+    <!-- 列表分页-->
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-paging">
+        <tr>
+            <td><a id="log_export" class="a-btn">导出Excel</a></td>
+            <td align="right">
+                <form action="">
+                    共<span id="pagecnt_log" class="list-paging-shuzi">1</span>页，当前第<span id="pageno_log" class="list-paging-shuzi">1</span>页，共<span id="reccnt_log" class="list-paging-shuzi">0</span>条数据
+                    <a class="list-paging-a firstPage" title="首页">&laquo;</a>
+                    <a class="list-paging-a prevPage" title="上一页">&lsaquo;</a>
+                    <a class="list-paging-a nextPage" title="下一页">&rsaquo;</a>
+                    <a class="list-paging-a lastPage" title="末页">&raquo;</a>
+                    <input type="text" class="list-paging-input input-default pageNum" maxlength="3" placeholder="页码" />
+                    <a class="a-btn searchPage"  title="跳转">GO</a>
+                </form>
+            </td>
+        </tr>
+    </table> 
+    <div class="clear"></div> 
+</div>
+
+<div class="copyright">@ 2017 xxxx有限公司</div>
+
+<script>
+    $(document).ready(function() {
+        log.addEvent();
+    }); 
+</script>

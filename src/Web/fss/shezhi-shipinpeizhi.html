@@ -1,0 +1,61 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>视频配置</a>
+</div>
+<!--/place--> 
+<div class="lanmubox">
+   <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">平台配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox"> 
+    <div class="lmtsz">流媒体设置</div> 
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-table">
+        <thead>
+        <tr>
+            <th width="8%">通道</th>
+            <th width="15%">摄像机IP</th>
+            <th width="15%">摄像机用户名</th>
+            <th width="12%">摄像机密码</th>
+            <th width="18%">摄像机厂家</th>
+            <th width="17%">流媒体</th>
+            <th width="15%">操作</th>
+        </tr> 
+        </thead>
+        <tbody id="list-tbody"></tbody>
+       
+    </table>
+
+    <!-- 列表分页-->
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-paging">
+        <tr>
+            <td><a class="channel-btn addChannel-btn addChannel" >添加通道</a></td>
+        </tr>
+    </table>
+   <input value="" id='maxChannel' style='display:none;'/>
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">@ 2017 xxxx有限公司</div>
+<script>
+    $(document).ready(function() {
+        sppz.addEvent();
+    });
+
+</script>

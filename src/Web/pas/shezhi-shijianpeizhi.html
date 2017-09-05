@@ -1,0 +1,84 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>时间配置</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">上传配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+<div class="mainbox">
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-table2">
+        <tr>
+            <th>手动对时
+            </th>
+            <td>设备时间
+                <input id="localtime" type="text" value="" class="input-default" />
+                <a id="putUserTime" class="sjpz-tongbu">手动对时</a>
+                <a id="setComputerTime" class="sjpz-tongbu">与计算机时间同步</a>
+            </td>
+        </tr>
+        <tr>
+            <th>视频源对时
+                <span class="a-offon" data-on="2" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <select id="synchid" class="select-default">
+                    <option value="1">通道1</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>NTP对时
+                <span class="a-offon" data-on="1" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="sjpz-item">
+                    NTP服务器地址                  
+                    <input id="addrNTP" type="text" value="" class="input-default" />
+                </div>
+                <div class="sjpz-item">
+                    对时间隔
+                    <input id="intevalTime" type="text" value="" class="input-default" />分
+                </div>
+            </td>
+        </tr>
+        <tr style="display: none;">
+            <th>平台对时
+                <span class="a-offon" data-on="3" style="vertical-align: middle;"></span>
+            </th>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <th>GPS对时
+                <span class="a-offon" data-on="4" style="vertical-align: middle;"></span>
+            </th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">©2016-2017 Ceye. All rights reserved.</div>
+<script>
+    $(document).ready(function () {
+        sjpz.addEvent();
+    });
+</script>

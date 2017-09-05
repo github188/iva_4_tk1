@@ -1,0 +1,82 @@
+li a:hover {
+    cursor: pointer;
+}
+
+.dq_choice {
+    border-color: #008afa;
+    color: #fff;
+    background: #008afa;
+}
+
+.ui-slider-horizontal {
+    height: .46em;
+    width: 100px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    background: #D8D8D8;
+}
+
+.ui-slider .ui-slider-handle {
+    height: 1em;
+    width: 1em;
+    background-color: #3598DB;
+    background-image: none;
+    border: 1px solid #3598DB;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.ui-slider .ui-slider-range {
+    background-color: #3598DB;
+    background-image: none;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    top: -.35em;
+    outline: none;
+}
+
+.ui-slider .ui-slider-handle::before {
+    content: "";
+    line-height: 10px;
+}
+
+.ui-slider .ui-slider-handle:hover {}
+
+.yulan-yuntai-kongzhi-sudu .ui-slider .ui-slider-range {
+    border-radius: 4px;
+}
+
+.player-pictures {
+    position: relative;
+    /*    display: none;*/
+}
+
+.player-pictures a {
+    position: absolute;
+    margin: auto;
+    width: 325px;
+    height: 30px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: red;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+.save-successful {
+    display: none;
+}
+
+.plugin_notice {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+#showPlayer {
+    float: left;
+/*    display: none;*/
+}

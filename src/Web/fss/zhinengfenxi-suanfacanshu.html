@@ -1,0 +1,182 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>智能分析</a> &raquo; <a>算法参数</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li class="lanmu-active"><a data-url="zhinengfenxi-suanfacanshu">算法参数</a></li>
+        <li><a data-url="zhinengfenxi-fenxiguize">分析规则</a></li>
+        <li><a data-url="zhinengfenxi-zhuapaijihua">抓拍计划</a></li>
+        <li><a data-url="zhinengfenxi-quzhengshuju">取证数据配置</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+    <form id="sfcs_form">
+        <div class="sfcs-title">车牌识别</div>
+        <div class="sfcs-content">
+            <div class="sfcs-content-moren">默认省份</div>
+            <ul class="morenshengfen dq_box">
+                <li data-ty="pro_0">京</li>
+                <li data-ty="pro_1">新</li>
+                <li data-ty="pro_2">蒙</li>
+                <li data-ty="pro_3">云</li>
+                <li data-ty="pro_4">豫</li>
+                <li data-ty="pro_5">辽</li>
+                <li data-ty="pro_6">贵</li>
+                <li data-ty="pro_7">津</li>
+                <li data-ty="pro_8">闽</li>
+                <li data-ty="pro_9">冀</li>
+                <li data-ty="pro_10">晋</li>
+                <li data-ty="pro_11">吉</li>
+                <li data-ty="pro_12">黑</li>
+                <li data-ty="pro_13">沪</li>
+                <li data-ty="pro_14">苏</li>
+                <li data-ty="pro_15">浙</li>
+                <li data-ty="pro_16">皖</li>
+                <li data-ty="pro_17">赣</li>
+                <li data-ty="pro_18">鲁</li>
+                <li data-ty="pro_19">鄂</li>
+                <li data-ty="pro_20">湘</li>
+                <li data-ty="pro_21">粤</li>
+                <li data-ty="pro_22">桂</li>
+                <li data-ty="pro_23">琼</li>
+                <li data-ty="pro_24">川</li>
+                <li data-ty="pro_25">藏</li>
+                <li data-ty="pro_26">陕</li>
+                <li data-ty="pro_27">甘</li>
+                <li data-ty="pro_28">青</li>
+                <li data-ty="pro_29">宁</li>
+                <li data-ty="pro_30">渝</li>
+            </ul>
+            <table cellpadding="0" cellspacing="0" height="46">
+                <tr>
+                    <td>汉字识别自信度：</td>
+                    <td style="padding: 5px;">
+                        <div id="sfcs-hanzi" style="margin:5px auto;"></div>
+                        <input type="hidden" />
+                    </td>
+                    <td><span id="sfcs-hanzi-text"></span>%</td>
+                </tr>
+                <tr>
+                    <td>抓拍车牌大小：</td>
+                    <td width="160" style="padding:5px;">
+                        <div id="sfcs-chepai" style="margin:5px auto;"></div>
+                        <input type="hidden" /> 
+                    </td>
+                    <td>
+                        <input id="sfcs-chepai-val" type="text" class="input-default input-w60 validate[required,custom[integer],min[20],max[500]]" style="margin-bottom:8px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>相同车牌判定条件：</td>
+                    <td width="160" style="padding:5px;">
+                        <div id="sfcs-condition" style="margin:5px auto;"></div>
+                        <input type="hidden" /> 
+                    </td>
+                    <td>
+                        <input id="sfcs-condition-val" type="text" class="input-default input-w60 validate[required,custom[integer],min[0],max[6]]" />
+                    </td>
+                </tr>
+            </table>
+
+            <div class="sfcs-content-hang">相同号牌过滤间隔：
+                <input id="sameCarSpace" type="text" class="input-default input-w60 validate[required,custom[integer],min[0],max[1440]]" size="5" value="" />&nbsp;分
+            </div>
+        </div>
+
+        <div class="sfcs-xian"></div>
+
+        <div class="sfcs-title">抓拍策略</div>
+        <div class="sfcs-content">
+            <table cellpadding="0" cellspacing="0" height="40">
+                <tr>
+                    <td>抓拍灵敏度：</td>
+                    <td>快</td>
+                    <td width="160" style="padding: 0 5px;">
+                        <div id="sfcs-sensitivity" style="margin:5px auto;"></div>
+                        <input type="hidden" />
+<!--
+                        <div class="control-progress">
+                            <div class="control-progress-line"></div>
+                            <span class="control-progress-point" style="left: 20%;"></span>
+                        </div>
+-->
+                         
+                    </td>
+                    <td>准</td>
+                </tr>
+            </table>
+
+            <table cellspacing="0" cellpadding="0" height="40">
+                <tr>
+                    <td style="padding-right: 10px;">多场景切换：</td>
+                    <td>
+                        <input type="radio" id="lxhf-wenjian-lx" name="lxhf-wenjian" class="regular-radio" />
+                        <label for="lxhf-wenjian-lx"></label><span class="label-txt">场景优先</span></td>
+                    <td width="20"></td>
+                    <td>
+                        <input type="radio" id="lxhf-wenjian-tp" name="lxhf-wenjian" class="regular-radio" />
+                        <label for="lxhf-wenjian-tp"></label><span class="label-txt">目标优先</span></td>
+                </tr>
+            </table>
+
+            <div style="line-height: 40px;">场景最短分析时间
+                <input id="sfcs_stay" type="text" class="input-default input-w60 validate[required,custom[integer],min[0]]" style="margin: 0 5px;" />秒</div>
+
+            <div style="line-height: 40px;">重复抓拍间隔时间
+                <input id="repeat_snap" type="text" class="input-default input-w60 validate[required,custom[integer],min[0]]" style="margin: 0 5px;" />秒</div>
+
+            <div style="line-height: 40px;">
+                <span style="margin-right: 10px;">云台锁定</span>
+                <span class="a-offon" style="vertical-align: middle;"></span>
+            </div>
+
+            <div style="line-height: 40px;"><span style="margin-right: 10px;">锁定时间</span>
+                <input id="sfcs_locktime" type="text" value="" class="input-default input-w100 validate[required,custom[integer],min[0]]" />分</div>
+        </div> 
+
+        <div class="sfcs-xian"></div>
+
+        <div class="sfcs-title">地理位置</div>
+        <div class="sfcs-content">
+            <div style="line-height: 40px;">区域编号：
+                <input id="local_areaid" type="text" class="input-default input-w300" style="margin: 0 5px;" />
+            </div>
+            <div style="line-height: 40px;">区域名称：
+                <input id="local_areaname" type="text" class="input-default input-w300" style="margin: 0 5px;" />
+            </div>
+
+            <div style="line-height: 40px;">地点编号：
+                <input id="local_placeid" type="text" class="input-default input-w300" style="margin: 0 5px;" />
+            </div>
+            <div style="line-height: 40px;">地点名称：
+                <input id="local_placename" type="text" class="input-default input-w300" style="margin: 0 5px;" />
+            </div>
+
+            <div style="line-height: 40px;">监控点编号
+                <input id="local_monitoryid" type="text" class="input-default input-w300" style="margin: 0 5px;" />
+            </div>
+            <div style="line-height: 40px;">监控点名称
+                <input id="local_monitoryname" type="text" class="input-default input-w300" style="margin: 0 5px;" />
+            </div>
+        </div> 
+
+        <div class="clear"></div>
+    </form>
+</div>
+<!--/mainbox-->
+<div class="copyright">@ 2017 xxxx有限公司</div> 
+<script>
+    $(document).ready(function() {
+        sfcs.addEvent();
+    }); 
+</script> 

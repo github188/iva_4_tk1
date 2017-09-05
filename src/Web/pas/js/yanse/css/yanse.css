@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+#fontcolor {
+	margin:0;
+	padding:0;
+	border:0;
+	width:100px;
+	height:22px;
+	line-height:22px;
+	border-right:22px solid #1fbba6;
+	border-left:1px solid #1fbba6;
+	border-top:1px solid #1fbba6;
+	border-bottom:1px solid #1fbba6;
+}
+
+#backcolor {
+	margin:0;
+	padding:0;
+	border:0;
+	width:100px;
+	height:22px;
+	line-height:22px;
+	border-right:22px solid #1fbba6;
+	border-left:1px solid #1fbba6;
+	border-top:1px solid #1fbba6;
+	border-bottom:1px solid #1fbba6;
+}

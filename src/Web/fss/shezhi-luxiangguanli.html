@@ -1,0 +1,324 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>录像管理</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">平台配置</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+    <div class="lxgl-title">录像策略</div>
+    <div class="lx-content">
+        <div class="h-10"></div>
+
+        <div class="h-10"></div>
+        <table cellspacing="0" cellpadding="" width="" height="40">
+            <tr>
+                <td>开启录像</td>
+                <td><span class="a-offon" style="vertical-align: middle;"></span></td>
+            </tr>
+            <tr height="40">
+                <td style="padding-right:25px;">录像打包</td>
+                <td>
+                    <input type="radio" id="lxglSize" name="lxgl-dabao" class="regular-radio" />
+                    <label for="lxglSize"></label><span class="label-txt">按大小</span>
+                    <select name="" id="lxgl_packetsize" class="select-default" style="width: 120px;">
+                        <option value="100">100M</option>
+                        <option value="200">200M</option>
+                        <option value="300">300M</option>
+                        <option value="500">500M</option>
+                    </select>
+                </td>
+                <td style="padding-left: 50px;">
+                    <input type="radio" id="lxglTime" name="lxgl-dabao" class="regular-radio" />
+                    <label for="lxglTime"></label><span class="label-txt">按时间</span></td>
+                <td>
+                    <input id="lxgl_packettime" type="text" value="30" class="input-default input-w40" />分</td>
+            </tr>
+            <tr height="40">
+                <td style="padding-right:25px;">录像格式</td>
+                <td>
+                    <select name="" id="lxgl_fileformat" class="select-default" style="width: 120px;">
+                        <option value="0">MP4</option>
+                        <option value="1">avi</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="height: 50px;line-height: 40px;">
+                        <a class="a-btn setFirstRecord">全天录制</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="jihualuzhi">
+            <ul class="jh-tab">
+                <li class="active" aweek="1"><a href="#p-tabs-week1">星期一</a></li>
+                <li aweek="2"><a href="#p-tabs-week2">星期二</a></li>
+                <li aweek="3"><a href="#p-tabs-week3">星期三</a></li>
+                <li aweek="4"><a href="#p-tabs-week4">星期四</a></li>
+                <li aweek="5"><a href="#p-tabs-week5">星期五</a></li>
+                <li aweek="6"><a href="#p-tabs-week6">星期六</a></li>
+                <li aweek="7"><a href="#p-tabs-week7">星期日</a></li>
+            </ul>
+            <div id="p-tabs-week1" class="tab_content" style="display: block;">
+                <table width="100%" cellspacing="0" cellpadding="0" class="list-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">计划时间段</th>
+                            <th width="30%">开始时间</th>
+                            <th width="30%">结束时间</th>
+                            <th width="20%">时间操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>星期一时间段1</td>
+                            <td>12:00:00</td>
+                            <td>18:20:00</td>
+                            <td>
+                                <a class="icon-cz icon-sc" title="删除时间"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="p-tabs-week2" class="tab_content" style="display: none;">
+                <table width="100%" cellspacing="0" cellpadding="0" class="list-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">计划时间段</th>
+                            <th width="30%">开始时间</th>
+                            <th width="30%">结束时间</th>
+                            <th width="20%">时间操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>星期二时间段1</td>
+                            <td>12:00:00</td>
+                            <td>18:20:00</td>
+                            <td>
+                                <a class="icon-cz icon-sc" title="删除时间"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--/#p-tabs-week2-->
+            <div id="p-tabs-week3" class="tab_content" style="display: none;">
+                <table width="100%" cellspacing="0" cellpadding="0" class="list-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">计划时间段</th>
+                            <th width="30%">开始时间</th>
+                            <th width="30%">结束时间</th>
+                            <th width="20%">时间操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>星期三时间段1</td>
+                            <td>12:00:00</td>
+                            <td>18:20:00</td>
+                            <td>
+                                <a class="icon-cz icon-sc" title="删除时间"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--/#p-tabs-week3-->
+            <div id="p-tabs-week4" class="tab_content" style="display: none;">
+                <table width="100%" cellspacing="0" cellpadding="0" class="list-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">计划时间段</th>
+                            <th width="30%">开始时间</th>
+                            <th width="30%">结束时间</th>
+                            <th width="20%">时间操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>星期四时间段1</td>
+                            <td>12:00:00</td>
+                            <td>18:20:00</td>
+                            <td>
+                                <a class="icon-cz icon-sc" title="删除时间"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--/#p-tabs-week4-->
+            <div id="p-tabs-week5" class="tab_content" style="display: none;">
+                <table width="100%" cellspacing="0" cellpadding="0" class="list-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">计划时间段</th>
+                            <th width="30%">开始时间</th>
+                            <th width="30%">结束时间</th>
+                            <th width="20%">时间操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>星期五时间段1</td>
+                            <td>12:00:00</td>
+                            <td>18:20:00</td>
+                            <td>
+                                <a class="icon-cz icon-sc" title="删除时间"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--/#p-tabs-week5-->
+            <div id="p-tabs-week6" class="tab_content" style="display: none;">
+                <table width="100%" cellspacing="0" cellpadding="0" class="list-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">计划时间段</th>
+                            <th width="30%">开始时间</th>
+                            <th width="30%">结束时间</th>
+                            <th width="20%">时间操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>星期六时间段1</td>
+                            <td>12:00:00</td>
+                            <td>18:20:00</td>
+                            <td>
+                                <a class="icon-cz icon-sc" title="删除时间"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--/#p-tabs-week6-->
+            <div id="p-tabs-week7" class="tab_content" style="display: none;">
+                <table width="100%" cellspacing="0" cellpadding="0" class="list-table">
+                    <thead>
+                        <tr>
+                            <th width="20%">计划时间段</th>
+                            <th width="30%">开始时间</th>
+                            <th width="30%">结束时间</th>
+                            <th width="20%">时间操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>星期日时间段1</td>
+                            <td>12:00:00</td>
+                            <td>18:20:00</td>
+                            <td>
+                                <a class="icon-cz icon-sc" title="删除时间"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <!--/#p-tabs-week7-->
+        </div>
+        <!--/jihualuzhi-->
+        <div class="fuzhisj">
+            <div class="fuzhisj-c1">
+<!--                <div class="fuzhisj-c1-title">复制到星期</div>-->
+                <div style="height: 50px;line-height: 40px;">
+                    <a class="a-btn copyToWeek">复制到星期</a>
+                </div>
+                <div class="fuzhisj-c1-c">
+                    <input type="checkbox" id="zpjs-quanbu" class="regular-checkbox" />
+                    <label for="zpjs-quanbu"></label><span class="label-txt">全部选择</span>
+                    <span style="padding-left: 30px;">
+                        <input type="checkbox" id="zpjs-fanxiang" class="regular-checkbox" /><label for="zpjs-fanxiang"></label><span class="label-txt">反向选择</span>
+                    </span>
+                </div>
+            </div>
+            <ul class="fuzhisj-c2">
+                <li>
+                    <input type="checkbox" id="zpjs-week1" class="weekbox regular-checkbox" data-aweek="1"/>
+                    <label for="zpjs-week1"></label><span class="label-txt">星期一</span></li>
+                <li>
+                    <input type="checkbox" id="zpjs-week2" class="weekbox regular-checkbox" data-aweek="2"/>
+                    <label for="zpjs-week2"></label><span class="label-txt">星期二</span></li>
+                <li>
+                    <input type="checkbox" id="zpjs-week3" class="weekbox regular-checkbox" data-aweek="3"/>
+                    <label for="zpjs-week3"></label><span class="label-txt">星期三</span></li>
+                <li>
+                    <input type="checkbox" id="zpjs-week4" class="weekbox regular-checkbox" data-aweek="4"/>
+                    <label for="zpjs-week4"></label><span class="label-txt">星期四</span></li>
+                <li>
+                    <input type="checkbox" id="zpjs-week5" class="weekbox regular-checkbox" data-aweek="5"/>
+                    <label for="zpjs-week5"></label><span class="label-txt">星期五</span></li>
+                <li>
+                    <input type="checkbox" id="zpjs-week6" class="weekbox regular-checkbox" data-aweek="6"/>
+                    <label for="zpjs-week6"></label><span class="label-txt">星期六</span></li>
+                <li>
+                    <input type="checkbox" id="zpjs-week7" class="weekbox regular-checkbox" data-aweek="7"/>
+                    <label for="zpjs-week7"></label><span class="label-txt">星期日</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<!--
+<div id="previewVideo" class="modal" style="display:none;">
+    <div class="popup-box" style="width: 800px;">
+        <dl class="popup-dl">
+            <dt class="popup-dt relative">预览<span class="popup-close"></span></dt>
+            <dd class="popup-dd">
+                <div class="yulan-box"> 
+                    <div id="shipin" class="tab_content" style="display: none;">
+                        <a href="###" class="shipin-btn"></a>
+                    </div>
+
+                    <div class="yulan-bottom">
+                        <ul class="yulan-tab"> 
+                            <li><a href="#shipin">视频</a></li>
+                        </ul>
+ 
+                        <ul class="yulan-sx">
+                            <li><a title="上一条">上一条</a></li>
+                            <li><a title="下一条">下一条</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</div>
+-->
+<!--/mainbox-->
+<div class="copyright">@ 2017 xxxx有限公司</div>
+<script>
+    $(document).ready(function() {
+        lxgl.addEvent();
+    });
+
+</script>

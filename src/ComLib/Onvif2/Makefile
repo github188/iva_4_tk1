@@ -1,0 +1,56 @@
+LIB_INSTALL_DIR = $(COMLIB_LIB_DIR)
+INCLUDE_INSTALL_DIR = $(ONVIF2_INCLUDE_DIR)
+
+ONVIFCORE_DIR = onvifCore/
+ONVIFINTERFACE_DIR = onvifInterface/
+PLUGIN_DIR = onvifPlugin/
+
+INCLUDE_DIR1 = $(ONVIFCORE_DIR)include/
+INCLUDE_DIR2 = $(ONVIFINTERFACE_DIR)include/
+INCLUDE_DIR3 = $(PLUGIN_DIR)include/
+
+CFLAGS = -O2
+CFLAGS += -I$(INCLUDE_DIR1)
+CFLAGS += -I$(INCLUDE_DIR2)
+CFLAGS += -I$(INCLUDE_DIR3)
+CFLAGS += -I$(3RDLIB_INCLUDE_DIR)
+
+CFLAGS += -DWITH_OPENSSL -DWITH_DOM
+
+RELTARGET = libonvif2.a
+
+SOURCES1 = $(wildcard $(ONVIFCORE_DIR)*.cpp)
+SOURCES2 = $(wildcard $(ONVIFINTERFACE_DIR)*.cpp)
+SOURCES3 = $(wildcard $(PLUGIN_DIR)*.cpp)
+
+HEADERS = $(INCLUDE_DIR2)libonvif2.h
+HEADERS += $(INCLUDE_DIR2)libonvif2struct.h
+
+RELOBJFILES1 = $(SOURCES1:%.cpp=%.o)
+RELOBJFILES2 = $(SOURCES2:%.cpp=%.o)
+RELOBJFILES3 = $(SOURCES3:%.cpp=%.o)
+
+.PHONY: clean install
+
+all: install
+
+install: $(RELTARGET)
+	@mkdir -p $(INCLUDE_INSTALL_DIR)
+	install -d $(INCLUDE_INSTALL_DIR)
+	install $(HEADERS) $(INCLUDE_INSTALL_DIR)
+	install -d $(LIB_INSTALL_DIR)
+	install $(RELTARGET) $(LIB_INSTALL_DIR)
+
+$(RELTARGET): $(RELOBJFILES1) $(RELOBJFILES2) $(RELOBJFILES3)
+	$(AR) $@ $^ $(LDFLAGS)
+	
+.c.o:
+	$(CC) -c $(CFLAGS) $< -o $@
+	
+.cpp.o:
+	$(CPLUSPLUS) -c $(CFLAGS) $< -o $@
+	
+clean:
+	rm -f $(RELOBJFILES2) $(RELTARGET)
+
+

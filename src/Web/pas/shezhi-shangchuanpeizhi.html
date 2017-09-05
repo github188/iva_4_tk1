@@ -1,0 +1,224 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>上传配置</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-shangchuanpeizhi">上传配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful" style="display: none;">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-table2">
+        <tr>
+            <th>是否开启上传
+                <span id="switchAll" class="a-offonall" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="">
+                    <input id="deletesuccess" class="regular-checkbox" type="checkbox" />
+                    <label for="deletesuccess"></label>
+                    <span class="label-txt">上传成功后删除文件</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>HTTP上传平台
+                <span id="uploadByPlatform" class="a-offon" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="scpz-item">
+                    服务器地址
+                    <input id="platAddr" type="text" value="" class="input-default" />
+                </div>
+                <div class="scpz-item" style="display: none;">
+                    服务器端口
+                    <input id="platPort" type="text" value="" class="input-default" />
+                </div>
+                <div class="scpz-item">
+                    注册号
+                    <input id="platNumber" type="text" value="" class="input-default" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>MQTT上传平台
+                <span id="uploadByMQTT" class="a-offon" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="scpz-item">
+                    服务器地址
+                    <input id="mqttAddr" type="text" value="" class="input-default" />
+                </div>
+                <div class="scpz-item">
+                    服务器端口
+                    <input id="mqttPort" type="text" value="" class="input-default" />
+                </div>
+                <div class="scpz-item">
+                    注册号
+                    <input id="mqttNumber" type="text" value="" class="input-default" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>FTP上传
+                <span id="uploadByFTP" class="a-offon" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="scpz-item">
+                    服务器地址
+                    <input id="ftpAddr" type="text" value="" class="input-default" />
+                </div>
+                <div class="scpz-item">
+                    服务器端口
+                    <input id="ftpPort" type="text" value="" class="input-default" />
+                </div>
+                <div class="scpz-item">
+                    用户名
+                    <input id="ftpUname" type="text" value="" class="input-default" />
+                </div>
+                <div class="scpz-item">
+                    密码
+                    <input id="ftpPwd" type="text" value="" class="input-default" />
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="h-30"></div>
+
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-table2">
+        <tr>
+            <th>FTP上传内容
+            </th>
+            <td>
+                <div class="scpz-item-adv">
+                    <input id="textflag" class="regular-checkbox" type="checkbox" />
+                    <label for="textflag"></label>
+                    <span class="label-txt">文本</span>
+                </div>
+                <div class="scpz-item-adv">
+                    <input id="imageflag" class="regular-checkbox" type="checkbox" />
+                    <label for="imageflag"></label>
+                    <span class="label-txt">图片</span>
+                </div>
+                <div class="scpz-item-adv">
+                    <input id="recordflag" class="regular-checkbox" type="checkbox" />
+                    <label for="recordflag"></label>
+                    <span class="label-txt">录像</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>FTP路径
+            </th>
+            <td>
+                <div class="scpz-item">
+                    中文编码
+                    <select id="charsettype" class="select-default">
+                        <option value="0">GB2312</option>
+                        <option value="1">UTF-8</option>
+                    </select>
+                </div>
+                <div class="scpz-item">
+                    违法数据上传目录
+                    <input id="illegalgrammar" type="text" value="" class="input-default input-w200" />
+                </div>
+                <div class="scpz-item">
+                    事件数据上传目录
+                    <input id="eventgrammar" type="text" value="" class="input-default input-w200" />
+                </div>
+                <div class="scpz-item" style="display: none;">
+                    卡口数据上传目录
+                    <input id="tollgrammar" type="text" value="" class="input-default input-w200" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>通配符
+            </th>
+            <td>
+                <div class="scpz-item">
+                    4位年:%YYYY%
+                </div>
+                <div class="scpz-item">
+                    2位年:%YY%
+                </div>
+                <div class="scpz-item">
+                    2位月:%MM%
+                </div>
+                <div class="scpz-item">
+                    2位日:%DD%
+                </div>
+                <div class="scpz-item">
+                    2位时:%HH%
+                </div>
+                 <div class="scpz-item">
+                    2位分:%mm%
+                </div>
+               <div class="scpz-item">
+                    设备IP:%IP%
+                </div>
+               <div class="scpz-item">
+                    设备编号:%ID%
+                </div>
+               <div class="scpz-item">
+                    违法代码：%WFD%
+               </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="h-30"></div>
+
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-table2">
+        <tr class="nodifyFunc">
+            <th>推送微信挪车
+                <span id="notifySwitch" class="a-offonall" style="vertical-align: middle;"></span>
+            </th>
+            <td>
+                <div class="">
+                    <input id="addImage" class="regular-checkbox" type="checkbox">
+                    <label for="addImage"></label>
+                    <span class="label-txt">附带图片</span>
+                </div>
+            </td>
+        </tr>
+        <tr class="nodifyFunc">
+            <th>推送地址
+            </th>
+            <td>
+                <div class="scpz-item">
+                    服务器地址
+                    <input id="notifyAddr" type="text" value="" class="input-default" />
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">©2016-2017 Ceye. All rights reserved.</div>
+<script>
+    $(document).ready(function () {
+        scpz.addEvent();
+    });
+
+</script>

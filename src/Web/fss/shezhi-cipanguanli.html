@@ -1,0 +1,138 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>设备详情</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">平台配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li class="lanmu-active"><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+    <div class="cpgl-title cpgl-title1">磁盘列表</div>
+    <table cellspacing="0" cellpadding="0" width="100%" class="list-table">
+        <thead>
+            <tr>
+                <th width="10%">序号</th>
+                <th width="15%">磁盘类型</th>
+                <th width="15%">总容量</th>
+                <th width="15%">剩余容量</th>
+                <th width="10%">文件系统格式</th>
+                <th width="15%">功能类型</th>
+                <th width="10%">状态</th>
+                <th width="10%">操作</th>
+            </tr>
+        </thead>
+        <tbody id="diskTable">
+<!--
+            <tr>
+                <td>1</td>
+                <td>ROM</td>
+                <td>14GB</td>
+                <td>10GB</td>
+                <td>ext4</td>
+                <td>系统</td>
+                <td>正常</td>
+                <td>
+                    <a href="" class="icon-cz icon-geshihua" title="格式化"></a>
+                </td>
+            </tr>
+-->
+
+<!--
+            <tr>
+                <td>2</td>
+                <td>SD</td>
+                <td>128GB</td>
+                <td>55GB</td>
+                <td>ntfs</td>
+                <td>
+                    <select name="" id="" class="select-default" style="width: 150px;">
+                        <option value="">不使用</option>
+                        <option value="">存储数据</option>
+                        <option value="">离线拷贝</option>
+                    </select>
+                </td>
+                <td>正常</td>
+                <td>
+                    <a href="" class="icon-cz icon-geshihua" title="格式化"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>USB</td>
+                <td>1TB</td>
+                <td>99GB</td>
+                <td>fat32</td>
+                <td>
+                    <select name="" id="" class="select-default" style="width: 150px;">
+                        <option value="">不使用</option>
+                        <option value="">存储数据</option>
+                        <option value="">离线拷贝</option>
+                    </select>
+                </td>
+                <td>磁盘错误</td>
+                <td>
+                    <a href="" class="icon-cz icon-geshihua" title="格式化"></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>HDD</td>
+                <td>2TB</td>
+                <td>1.5TB</td>
+                <td>unknown</td>
+                <td>
+                    <select name="" id="" class="select-default" style="width: 150px;">
+                        <option value="">不使用</option>
+                        <option value="">存储数据</option>
+                    </select>
+                </td>
+                <td>磁盘错误</td>
+                <td>
+                    <a href="" class="icon-cz icon-geshihua" title="格式化"></a>
+                </td>
+            </tr>
+-->
+        </tbody>
+    </table>
+
+    <div class="h-30"></div>
+
+    <div class="cpgl-title cpgl-title2">磁盘策略</div>
+
+    磁盘空间小于
+    <input type="text" value="2" id="threshold_cpgl" class="input-default input-w100" /> MB时，
+    <select name="" id="storeStrategy_cpgl" class="select-default" style="width: 150px;">
+        <option value="0">滚动覆盖</option>
+        <option value="1">停止写入</option>
+    </select>
+
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">@ 2017 xxxx有限公司</div>
+<script>
+    $(document).ready(function() {
+        cpgl.addEvent();
+    });
+
+</script>

@@ -1,0 +1,102 @@
+<div class="place">
+    <span class="place-begin">你所在的位置：</span><a>系统设置</a> &raquo; <a>设备详情</a>
+</div>
+<!--/place-->
+
+<div class="lanmubox">
+    <ul class="lanmu-caidan">
+        <li class="lanmu-active"><a data-url="shezhi-shebeixiangqing">设备详情</a></li>
+        <li><a data-url="shezhi-shipinpeizhi">视频配置</a></li>
+        <li><a data-url="shezhi-wangluopeizhi">网络配置</a></li>
+        <li><a data-url="shezhi-yonghuguanli">用户管理</a></li>
+        <li><a data-url="shezhi-shijianpeizhi">时间配置</a></li>
+        <li><a data-url="shezhi-shangchuanpeizhi">上传配置</a></li>
+        <li><a data-url="shezhi-luxiangguanli">录像管理</a></li>
+        <li><a data-url="shezhi-cipanguanli">磁盘管理</a></li>
+        <li><a data-url="shezhi-xitongweihu">系统维护</a></li>
+    </ul>
+    <!--/lanmu-caidan-->
+    <div class="lanmu-save">
+        <span class="save-successful">数据保存成功!</span>
+        <span class="save-btn">保存</span>
+    </div>
+    <!--/lanmu-save-->
+</div>
+<!--/lanmubox-->
+
+<div class="mainbox">
+
+    <table cellpadding="0" cellspacing="0" width="100%" class="sbxq-table">
+        <tr>
+            <td width="33.3%"><span class="sbxq-td-begin">设备编号：</span>
+                <input id="sbbh_sbxq" type="text" class="input-default input-w200" />
+            </td>
+            <td width="33.3%"><span class="sbxq-td-begin">设备型号：</span><span id="sbxx_sbxq"></span></td>
+            <td><span class="sbxq-td-begin">运行时长：</span><span id="runtime_sbxq"></span></td>
+        </tr>
+        <tr>
+            <td><span class="sbxq-td-begin">软件版本：</span>v<span id="software_version"></span></td>
+            <td>
+                <span class="sbxq-td-begin fleft">视频状态：</span>
+                <div class="sbxq-sp-online fleft" style="display: inline-block;">视频在线</div>
+                <div class="sbxq-sp-offline fleft" style="display: none;">视频离线</div>
+            </td>
+            <td>
+                <span class="sbxq-td-begin fleft">WIFI状态：</span>
+                <div class="sbxq-wifi-online fleft" style="display: none;">WIFI打开</div>
+                <div class="sbxq-wifi-offline fleft" style="display: inline-block;">WIFI关闭</div>
+            </td>
+        </tr>
+        <tr>
+            <td><span class="sbxq-td-begin">GPS信息：</span><span id="gpsStatus"></span></td>
+            <td><span class="sbxq-td-begin">内存温度：</span><span id="memoryTemperature"></span>℃</td>
+            <td><span class="sbxq-td-begin">CPU温度：</span><span id="CPUtemperature"></span>℃</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span class="sbxq-cipan-begin">磁盘剩余：</span>
+                <div class="cinpan">
+                    <div class="cinpan-percentage" style="width: 0%;"></div>
+                </div>
+                <!--/cinpan-->
+                <span class="sbxq-tongji">总共<span id="totalStorage"></span>，已使用<span id="usedStorage"></span>GB，剩余<span id="leaveStorage"></span>GB</span>
+                <span class="cinpan-grid cinpan-be"></span>
+                <span class="cinpan-txt">已使用</span>
+                <span class="cinpan-grid cinpan-shengyu"></span>
+                <span class="cinpan-txt">剩余</span>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span class="sbxq-td-begin">截图路径：</span>
+                <input id="picPath" type="text" class="input-default" style="width: 400px;" readonly />
+                <a id="yulan_cclj" class="a-btn">浏览</a>
+                <a class="a-btn">打开文件夹</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span class="sbxq-td-begin">录像路径：</span>
+                <input id="recordPath" type="text" class="input-default" style="width: 400px;" readonly />
+                <a id="yulan_lxlj" class="a-btn">浏览</a>
+                <a class="a-btn">打开文件夹</a>
+            </td>
+        </tr>
+
+    </table>
+
+    <object id="plugin2" type="application/x-ivrwebplugin" width="0px" height="0px">
+        <param name="onload" value="preview_pluginLoaded" />
+    </object>
+
+    <div class="clear"></div>
+</div>
+<!--/mainbox-->
+<div class="copyright">©2016-2017 Ceye. All rights reserved.</div>
+<script>
+    $(document).ready(function () {
+        sbxq.addEvent();
+    });
+
+</script>
